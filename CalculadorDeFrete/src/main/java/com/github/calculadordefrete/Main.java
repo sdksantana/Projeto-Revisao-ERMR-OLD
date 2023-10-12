@@ -29,7 +29,7 @@ public class Main {
         System.out.println("Selecione o porte do caminhão:");
         System.out.println("[1] Pequeno");
         System.out.println("[2] Médio");
-        System.out.println("[3] Grande");
+        System.out.println("[3] grande");
 
         tipo = scanner.nextInt();
 

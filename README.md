@@ -1,6 +1,6 @@
 # Equipe: ERMR (Eu reclamo mas resolvo)
 ## Membros: 
-Ândria Dias, Anita Sampaio, Gaya Pizol, Karine Santana e Maria Fernanda 
+Ândria Dias, Anita Sampaio, Gaya Pizoli, Karine Santana e Maria Fernanda 
 
 - `JDK 17`
 - `IntelliJ IDEA`

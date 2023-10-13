@@ -21,16 +21,6 @@ public class Main {
         distancia = LerArquivo(caminho, x, y);
         System.out.println(distancia);
 
-        ArrayList<Produtos> produtosLoja = new ArrayList<>();
-        produtosLoja.add(new Produtos("Celular", 0.7)); // nome do produto, peso por kg
-        produtosLoja.add(new Produtos("Geladeira", 50));
-        produtosLoja.add(new Produtos("Air Fryer", 3.5));
-        produtosLoja.add(new Produtos("Cadeira", 5.0));
-        produtosLoja.add(new Produtos("Luminária", 0.8));
-        produtosLoja.add(new Produtos("Lavadora de Roupa", 15));
-        produtosLoja.add(new Produtos("Playstation 5", 3.9));
-        produtosLoja.add(new Produtos("Nintendo Switch", 0.3));
-
         ArrayList<Caminhoes> tiposCaminhoes = new ArrayList<>();
         tiposCaminhoes.add(new Caminhoes("pequeno", 5.83, 1));//R$ 5,83 por km, 1 tonelada.
         tiposCaminhoes.add(new Caminhoes("medio", 13.42, 4));
@@ -101,11 +91,41 @@ public class Main {
 
     }
 
-    static int RetornaProduto(){
-        System.out.println("Escolha o produto:");
-        System.out.println(["[] - "]);
-    }
+    static int RetornaProduto() {
+        Scanner scanner = new Scanner(System.in);
 
+        ArrayList<Produtos> produtosLoja = new ArrayList<>();
+        produtosLoja.add(new Produtos("Celular", 0.7)); // nome do produto, peso por kg
+        produtosLoja.add(new Produtos("Geladeira", 50));
+        produtosLoja.add(new Produtos("Air Fryer", 3.5));
+        produtosLoja.add(new Produtos("Cadeira", 5.0));
+        produtosLoja.add(new Produtos("Luminária", 0.8));
+        produtosLoja.add(new Produtos("Lavadora de Roupa", 15));
+        produtosLoja.add(new Produtos("Playstation 5", 3.9));
+        produtosLoja.add(new Produtos("Nintendo Switch", 0.3));
+
+        System.out.println("Escolha a quantidade de produtos que deseja transportar:");
+        int quantidade = scanner.nextInt();
+
+        for (int rodadas = 0; quantidade > rodadas; rodadas++){
+            do {
+                System.out.println("Escolha o produto:");
+                System.out.println("[1] - Celular (0,7kg)");
+                System.out.println("[2] - Geladeira (50kg)");
+                System.out.println("[3] - Air Fryer (3,5kg)");
+                System.out.println("[4] - Cadeira (5kg)");
+                System.out.println("[5] - Luminária (0,8kg)");
+                System.out.println("[6] - Lavadora de roupa (15kg)");
+                System.out.println("[7] - Playstation 5 (3,9kg)");
+                System.out.println("[8] - Nintendo Switch (0,3kg");
+                String produto = scanner.nextLine();
+                scanner.nextLine();
+                System.out.println("Quantos desse você gostaria de pegar?");
+                int quantidadeDeProdutos = scanner.nextInt();
+            } while (quantidade > rodadas);}
+
+    }
+    
 
     public static int LerArquivo(String arquivo, int x, int y)
     {

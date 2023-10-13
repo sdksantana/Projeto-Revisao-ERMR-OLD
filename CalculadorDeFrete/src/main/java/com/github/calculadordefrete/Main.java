@@ -21,6 +21,16 @@ public class Main {
         distancia = LerArquivo(caminho, x, y);
         System.out.println(distancia);
 
+        ArrayList<Produtos> produtosLoja = new ArrayList<>();
+        produtosLoja.add(new Produtos("Celular", 0.7)); // nome do produto, peso por kg
+        produtosLoja.add(new Produtos("Geladeira", 50));
+        produtosLoja.add(new Produtos("Air Fryer", 3.5));
+        produtosLoja.add(new Produtos("Cadeira", 5.0));
+        produtosLoja.add(new Produtos("Luminária", 0.8));
+        produtosLoja.add(new Produtos("Lavadora de Roupa", 15));
+        produtosLoja.add(new Produtos("Playstation 5", 3.9));
+        produtosLoja.add(new Produtos("Nintendo Switch", 0.3));
+
         ArrayList<Caminhoes> tiposCaminhoes = new ArrayList<>();
         tiposCaminhoes.add(new Caminhoes("pequeno", 5.83, 1));//R$ 5,83 por km, 1 tonelada.
         tiposCaminhoes.add(new Caminhoes("medio", 13.42, 4));
@@ -90,6 +100,12 @@ public class Main {
         return cidade;
 
     }
+
+    static int RetornaProduto(){
+        System.out.println("Escolha o produto:");
+        System.out.println(["[] - "]);
+    }
+
 
     public static int LerArquivo(String arquivo, int x, int y)
     {

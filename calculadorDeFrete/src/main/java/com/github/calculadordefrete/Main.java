@@ -107,6 +107,7 @@ public class Main {
         System.out.println("Escolha a quantidade de produtos que deseja transportar:");
         int quantidade = scanner.nextInt();
 
+
         for (int rodadas = 0; rodadas < quantidade; rodadas++) {
             System.out.println("Escolha o produto:");
 
@@ -121,29 +122,33 @@ public class Main {
                 System.out.println("Quantos desse você gostaria de pegar?");
                 int quantidadeDeProdutos = scanner.nextInt();
                 // Faça algo com a escolha do produto e a quantidade aqui
+                double pesoDosProdutos = escolhaProduto * quantidadeDeProdutos;
+                double pesoTotal = pesoDosProdutos * quantidade;
+
             } else {
                 System.out.println("Escolha de produto inválida.");
             }
+
         }
 
         return 0;
     }
 
-    public static void custoTransporte(double peso, double distancia) {
+    public static void custoTransporte(pesoTotal, distancia) {
         double transporte;
         String modeloCaminhao;
 
-        if (peso <= 1000) {
+        if (pesoTotal <= 1000) {
             transporte = distancia * 5.83;
             modeloCaminhao = "Pequeno";
-        } else if (peso <= 4000) {
+        } else if (pesoTotal <= 4000) {
             transporte = distancia * 13.42;
             modeloCaminhao = "Médio";
-        } else if (peso <= 10000) {
+        } else if (pesoTotal <= 10000) {
             transporte = distancia * 29.21;
             modeloCaminhao = "Grande";
         } else {
-            int caminhoesNecessarios = (int) Math.ceil(peso / 10);
+            int caminhoesNecessarios = (int) Math.ceil(pesoTotal / 10);
             transporte = caminhoesNecessarios * distancia * 29.21;
             modeloCaminhao = "Grande (x" + caminhoesNecessarios + ")";
         }

@@ -124,6 +124,8 @@ public class Main {
                 int quantidadeDeProdutos = scanner.nextInt();
             } while (quantidade > rodadas);}
 
+        return 0;
+
     }
 
     public static void custoTransporte(double peso, double distancia) {

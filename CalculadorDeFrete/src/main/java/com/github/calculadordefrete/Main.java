@@ -125,6 +125,30 @@ public class Main {
             } while (quantidade > rodadas);}
 
     }
+
+    public static void custoTransporte(double peso, double distancia) {
+        double transporte;
+        String modeloCaminhao;
+
+        if (peso <= 1000) {
+            transporte = distancia * 5.83;
+            modeloCaminhao = "Pequeno";
+        } else if (peso <= 4000) {
+            transporte = distancia * 13.42;
+            modeloCaminhao = "Médio";
+        } else if (peso <= 10000) {
+            transporte = distancia * 29.21;
+            modeloCaminhao = "Grande";
+        } else {
+            int caminhoesNecessarios = (int) Math.ceil(peso / 10);
+            transporte = caminhoesNecessarios * distancia * 29.21;
+            modeloCaminhao = "Grande (x" + caminhoesNecessarios + ")";
+        }
+
+        //  resultado
+        System.out.println("O melhor modelo de caminhão para a entrega é: " + modeloCaminhao);
+        System.out.println("Custo do transporte: R$" + transporte);
+    }
     
 
     public static int LerArquivo(String arquivo, int x, int y)

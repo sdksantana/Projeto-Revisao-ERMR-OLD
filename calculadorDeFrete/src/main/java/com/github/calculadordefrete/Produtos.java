@@ -1,4 +1,4 @@
-package com.github.calculadordefrete;
+package calculadorDeFrete.src.main.java.com.github.calculadordefrete;
 
 public class Produtos {
     String nome;

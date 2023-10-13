@@ -1,4 +1,4 @@
-package com.github.calculadordefrete;
+package calculadorDeFrete.src.main.java.com.github.calculadordefrete;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -107,25 +107,26 @@ public class Main {
         System.out.println("Escolha a quantidade de produtos que deseja transportar:");
         int quantidade = scanner.nextInt();
 
-        for (int rodadas = 0; quantidade > rodadas; rodadas++){
-            do {
-                System.out.println("Escolha o produto:");
-                System.out.println("[1] - Celular (0,7kg)");
-                System.out.println("[2] - Geladeira (50kg)");
-                System.out.println("[3] - Air Fryer (3,5kg)");
-                System.out.println("[4] - Cadeira (5kg)");
-                System.out.println("[5] - Luminária (0,8kg)");
-                System.out.println("[6] - Lavadora de roupa (15kg)");
-                System.out.println("[7] - Playstation 5 (3,9kg)");
-                System.out.println("[8] - Nintendo Switch (0,3kg");
-                String produto = scanner.nextLine();
-                scanner.nextLine();
+        for (int rodadas = 0; rodadas < quantidade; rodadas++) {
+            System.out.println("Escolha o produto:");
+
+            // Exiba as opções de produtos com números
+            for (int i = 0; i < produtosLoja.size(); i++) {
+                System.out.println("[" + (i + 1) + "] " + produtosLoja.get(i).getNome() + " (" + produtosLoja.get(i).getPeso() + "kg)");
+            }
+
+            int escolhaProduto = scanner.nextInt();
+
+            if (escolhaProduto >= 1 && escolhaProduto <= produtosLoja.size()) {
                 System.out.println("Quantos desse você gostaria de pegar?");
                 int quantidadeDeProdutos = scanner.nextInt();
-            } while (quantidade > rodadas);}
+                // Faça algo com a escolha do produto e a quantidade aqui
+            } else {
+                System.out.println("Escolha de produto inválida.");
+            }
+        }
 
         return 0;
-
     }
 
     public static void custoTransporte(double peso, double distancia) {

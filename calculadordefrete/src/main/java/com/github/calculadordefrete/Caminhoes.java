@@ -1,5 +1,4 @@
 package com.github.calculadordefrete;
-
 public class Caminhoes {
     String tipo;
     double precoKM;

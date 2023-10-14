@@ -1,4 +1,4 @@
-package calculadordefrete.src.main.java.com.github.calculadordefrete;
+package com.github.calculadordefrete;
 
 import java.io.FileReader;
 import java.io.IOException;

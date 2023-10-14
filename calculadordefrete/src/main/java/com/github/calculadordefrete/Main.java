@@ -1,4 +1,5 @@
 package calculadordefrete.src.main.java.com.github.calculadordefrete;
+
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -43,10 +44,8 @@ public class Main {
             tipoTexto = "grande";
         }
 
-        for (Caminhoes item : tiposCaminhoes)
-        {
-            if (item.getTipo().equals(tipoTexto))
-            {
+        for (Caminhoes item : tiposCaminhoes) {
+            if (item.getTipo().equals(tipoTexto)) {
                 preco = item.getPrecoKM();
                 break;
             }
@@ -134,7 +133,13 @@ public class Main {
         return 0;
     }
 
-    public static void custoTransporte(pesoTotal, distancia) {
+    public static void custoTransporte() {
+        double pesoTotal = 0;
+        String caminho = null;
+        int x = RetornaCidade();
+        int y = RetornaCidade();
+
+        int distancia = LerArquivo(caminho, x, y);
         double transporte;
         String modeloCaminhao;
 
@@ -156,24 +161,21 @@ public class Main {
         //  resultado
         System.out.println("O melhor modelo de caminhão para a entrega é: " + modeloCaminhao);
         System.out.println("Custo do transporte: R$" + transporte);
-    }
-    
 
-    public static int LerArquivo(String arquivo, int x, int y)
-    {
+    }
+
+
+    public static int LerArquivo(String arquivo, int x, int y) {
         int[][] distancias = null;
         try (BufferedReader br = new BufferedReader(new FileReader(arquivo))) {
             String linha;
             int linhaCount = 0;
-            while ((linha = br.readLine()) != null)
-            {
+            while ((linha = br.readLine()) != null) {
                 String[] numerosString = linha.split(";");
-                if (distancias == null)
-                {
+                if (distancias == null) {
                     distancias = new int[numerosString.length][numerosString.length];
                 }
-                for (int i = 0; i < numerosString.length; i++)
-                {
+                for (int i = 0; i < numerosString.length; i++) {
                     distancias[linhaCount][i] = Integer.parseInt(numerosString[i]);
                 }
                 linhaCount++;

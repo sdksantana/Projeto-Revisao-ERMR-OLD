@@ -138,6 +138,7 @@ public class Main {
         String caminho = null;
         int x = RetornaCidade();
         int y = RetornaCidade();
+       int  i= 0;
 
         int distancia = LerArquivo(caminho, x, y);
         double transporte;
